@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Tickets | SkipQ</title>
+  <link rel="icon" href="assets/skipq.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+    <h1 class="text-xl font-bold text-red-600">SkipQ</h1>
+    <div class="space-x-4 text-sm font-medium hidden md:flex">
+      <a href="index.html" class="hover:text-red-500">Home</a>
+      <a href="booking.html" class="hover:text-red-500">Book Ticket</a>
+      <a href="your-tickets.html" class="text-red-600 font-semibold">Your Tickets</a>
+      <button onclick="openModal()" class="hover:text-red-500 focus:outline-none">Purchase History</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow px-4 py-8 max-w-4xl mx-auto w-full">
+    <h2 class="text-2xl font-bold mb-6">🎫 Active Tickets</h2>
+
+    <!-- Ticket Card -->
+    <div class="bg-white rounded-xl shadow-md p-4 mb-6">
+      <div class="flex justify-between items-center mb-2">
+        <div>
+          <h3 class="text-lg font-semibold">Accra → Kumasi</h3>
+          <p class="text-sm text-gray-500">Trip ID: #SKQ4589</p>
+        </div>
+        <span class="text-sm bg-green-100 text-green-600 px-3 py-1 rounded-full">Upcoming</span>
+      </div>
+      <div class="text-sm text-gray-600 mb-3">
+        <p><strong>Date:</strong> Aug 5, 2025 — 9:00 AM</p>
+        <p><strong>Bus:</strong> Metro Express A/C</p>
+        <p><strong>Seat:</strong> 12A</p>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 text-sm">View QR Code</button>
+        <button class="w-full border border-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-100 text-sm">Reschedule</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Mobile Bottom Nav -->
+<div class="fixed bottom-0 left-0 right-0 bg-white shadow-inner p-3 flex justify-around md:hidden border-t z-50 text-sm">
+  <a href="index.html" class="flex flex-col items-center text-gray-700 hover:text-red-500">
+    🏠
+    <span>Home</span>
+  </a>
+  <a href="booking.html" class="flex flex-col items-center text-gray-700 hover:text-red-500">
+    🎟️
+    <span>Book</span>
+  </a>
+  <a href="your-tickets.html" class="flex flex-col items-center text-red-600 font-semibold">
+    🎫
+    <span>Tickets</span>
+  </a>
+  <button onclick="openModal()" class="flex flex-col items-center text-gray-700 hover:text-red-500 focus:outline-none">
+    📜
+    <span>History</span>
+  </button>
+</div>
+
+
+<!-- Purchase History Modal -->
+<div id="purchaseModal" class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center z-50 px-4">
+  <div class="bg-white rounded-xl w-full max-w-md p-6 shadow-xl relative max-h-[90vh] overflow-y-auto space-y-5">
+    <div class="sticky top-0 bg-white pb-3 z-10">
+      <h3 class="text-xl font-bold text-gray-800">🧾 Purchase History</h3>
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-600 hover:text-red-600 text-2xl font-bold">&times;</button>
+    </div>
+
+    <!-- History Ticket Card (Reusable Style) -->
+    <div class="bg-gray-100 rounded-lg p-4 shadow-sm border border-gray-200">
+      <div class="flex justify-between items-center mb-2">
+        <div>
+          <h4 class="font-semibold text-gray-800">Cape Coast → Takoradi</h4>
+          <p class="text-xs text-gray-500">Trip ID: #SKQ3332</p>
+        </div>
+        <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">Completed</span>
+      </div>
+      <div class="text-sm text-gray-700 space-y-1">
+        <p><strong>Date:</strong> Jul 14, 2025 – 5:30 PM</p>
+        <p><strong>Bus:</strong> InterCity Premium</p>
+        <p><strong>Seat:</strong> 7C</p>
+      </div>
+    </div>
+
+    <!-- Add More Tickets Below This -->
+    <div class="bg-gray-100 rounded-lg p-4 shadow-sm border border-gray-200">
+      <div class="flex justify-between items-center mb-2">
+        <div>
+          <h4 class="font-semibold text-gray-800">Kumasi → Tamale</h4>
+          <p class="text-xs text-gray-500">Trip ID: #SKQ9981</p>
+        </div>
+        <span class="text-xs bg-gray-200 text-gray-700 px-2 py-1 rounded-full">Completed</span>
+      </div>
+      <div class="text-sm text-gray-700 space-y-1">
+        <p><strong>Date:</strong> Jun 22, 2025 – 7:45 AM</p>
+        <p><strong>Bus:</strong> VIP Express</p>
+        <p><strong>Seat:</strong> 3A</p>
+      </div>
+    </div>
+
+    <!-- Placeholder for more -->
+    <div class="text-center text-sm text-gray-400 italic pt-4">Showing 2 of 10 trips</div>
+  </div>
+</div>
+
+
+      <!-- Close Button -->
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-600 text-xl font-bold">&times;</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow-inner p-4 text-center text-sm text-gray-500 mt-20">
+    &copy; 2025 SkipQ. All rights reserved.
+  </footer>
+
+  <!-- Modal JavaScript -->
+  <script>
+    function openModal() {
+      document.getElementById("purchaseModal").classList.remove("hidden");
+      document.getElementById("purchaseModal").classList.add("flex");
+    }
+
+    function closeModal() {
+      document.getElementById("purchaseModal").classList.remove("flex");
+      document.getElementById("purchaseModal").classList.add("hidden");
+    }
+  </script>
+</body>
+</html>

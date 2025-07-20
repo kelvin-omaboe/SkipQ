@@ -1,0 +1,5 @@
+Skip Q is a transport platform that focuses on making booking and travelling enquiries easy and convinient.
+
+theme colors: White, red, blue and a bit of black
+
+modern but transport themed design.
