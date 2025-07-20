@@ -9,24 +9,25 @@
 </head>
 <body class="bg-white text-gray-800 font-sans h-screen w-screen">
 
-  <div class="flex flex-col h-screen w-full px-6 py-4 overflow-hidden">
+  <!-- Fullscreen Layout -->
+  <div class="flex flex-col h-screen w-full p-6 overflow-hidden">
 
     <!-- Top: Logo + Tagline -->
-    <div class="flex flex-col items-center flex-shrink-0 mb-2">
-      <img src="assets/bus.webp" alt="SkipQ Logo" class="w-14 h-14 mb-1" />
-      <h1 class="text-xl font-bold text-red-600">SkipQ</h1>
-      <p class="text-base font-medium mt-1 text-center leading-snug">
+    <div class="flex flex-col items-center flex-shrink-0">
+      <img src="assets/bus.webp" alt="SkipQ Logo" class="w-16 h-16 mb-2" />
+      <h1 class="text-4xl font-bold text-red-600">SkipQ</h1>
+      <p class="text-4xl font-semibold mt-1 text-center leading-snug">
         Skip the queue,<br />ride smart.
       </p>
     </div>
 
-    <!-- Middle: Bus Image (smaller and tighter) -->
-    <div class="flex justify-center items-center flex-shrink-0 h-36">
-      <img src="assets/bus.webp" alt="Bus Illustration" class="max-h-28 w-auto object-contain" />
+    <!-- Middle: Bus Image -->
+    <div class="flex-grow flex items-center justify-center min-h-0">
+      <img src="assets/bus.webp" alt="Bus Illustration" class="max-h-30 w-auto object-contain" />
     </div>
 
     <!-- Bottom: Button -->
-    <div class="flex-shrink-0 mt-auto pb-4">
+    <div class="flex-shrink-0 mb-2">
       <a href="booking.html" class="block w-full bg-red-600 text-white text-center py-3 rounded-lg font-semibold text-base hover:bg-red-700 transition duration-300">
         Get Started
       </a>
@@ -36,3 +37,4 @@
 
 </body>
 </html>
+<!-- End of SkipQ/index.html -->
